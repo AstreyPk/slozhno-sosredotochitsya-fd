@@ -2,4 +2,361 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--background-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0 auto;
+  font-family: var(--font);
+  font-size: var(--font-size);
+  font-weight: 400;
+  line-height: 23.4px;
+}
+
+.header {
+  height: 100vh;
+  padding: 10px;
+  display: grid;
+  position: relative;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  justify-content: end;
+  gap: 11.5px;
+  padding-top: 39px;
+}
+
+.header__theme-menu-button {
+  padding: 1.5px 13px;
+  color: var(--btn-color);
+  text-align: center;
+  border: none;
+  background: transparent;
+  text-transform: lowercase;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px solid var(--btn-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--btn-color);
+  cursor: pointer;
+}
+
+.decorate {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--btn-color);
+  text-align: center;
+  padding-right: 8px;
+  text-transform: uppercase;
+  margin: 10px 10px;
+}
+
+.decorate::after{
+  display: block;
+  content: "";
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  fill: var(--accent-color);
+  filter: drop-shadow(0px 0px 4px var(--accent-color));
+}
+
+.frame::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  border-top: 1px solid var(--btn-color);
+  border-right: 1px solid var(--btn-color);
+  inline-size: 25px;
+  block-size: 25px;
+  margin: 10px;
+}
+
+.frame::after {
+  position: absolute;
+  left: -10px;
+  top: 620px;
+  content: "";
+  border-bottom: 1px solid var(--btn-color);
+  border-left: 1px solid var(--btn-color);
+  inline-size: 25px;
+  block-size: 25px;
+  margin: 20px;
+}
+
+.header_title {
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--title-color);
+  font-weight: 700;
+  line-height: 83%;
+  margin-left: 0px;
+  max-block-size: 192px;
+}
+
+.title_decor {
+  font-weight: 700;
+  background-color: var(--accent-color);
+  font-size: var(--font-size);
+  line-height: 23.4px;
+  color: var(--sub-text-color);
+}
+
+.header_text {
+  max-inline-size: 355px;
+  max-block-size: 117px;
+  justify-self: end;
+  align-self: start;
+}
+
+.main_text_title {
+  color: var(--btn-color);
+  font-weight: 700;
+  line-height: 23.4px;
+  font-size: var(--font-size);
+}
+
+.card {
+  padding-bottom: 20px;
+}
+
+.card_text {
+  font-size: var(--font-size);
+  color: var(--text-color);
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.card_link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.card_link:hover{
+  border-bottom: 1px solid var(--text-color);
+}
+
+.card_link:focus{
+  outline: none;
+}
+
+.card_link:focus-visible{
+  border: 1px solid var(--text-color);
+}
+
+.why_block{
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.why_block_title {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.why_article p:first-of-type {
+  padding-block-end: 10px;
+}
+
+.what_block {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.what_block_title {
+  max-inline-size: 355px;
+  padding-bottom: 20px;
+}
+
+.how_block {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.how_title {
+  padding-top: 10px;
+}
+
+.how_title_small {
+  font-weight: 400;
+}
+
+.how_article {
+  padding-top: 20px;
+}
+
+.how_card {
+  padding-top: 20px;
+}
+
+.how_card_text{
+  padding-block-start: 10px;
+}
+
+.gallery {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.gallery_title{
+  color: var(--sub-text-color);
+}
+
+.gallery_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.footer {
+  min-block-size: 100vh;
+  padding: 20px;
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer_title {
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
+  color: var(--title-color);
+  font-weight: 700;
+  line-height: 82.5%;
+}
+
+@media (width >= 768px){
+  .header__theme-menu-list {
+    padding-top: 146px;
+  }
+
+  .frame::after{
+    top: 960px;
+  }
+
+  .header_title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
+  }
+
+  .why_block {
+    grid-template-columns: 35% 65%;
+    padding-top: 60px;
+  }
+
+  .why_block_title {
+    padding-top: 0;
+    padding-bottom: 0;
+    max-inline-size: 236px;
+  }
+
+  .what_block {
+    padding-top: 80px;
+  }
+
+  .what_block_title {
+    max-inline-size: 236px;
+  }
+
+  .how_block {
+    grid-template-columns: 35% 65%;
+  }
+
+  .how_title{
+    max-inline-size: 236px;
+  }
+
+  .gallery_container {
+    display: grid;
+    gap: 20px;
+    grid-template-areas: inherit;
+  }
+
+  .gallery_item {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .gallery_item_mountains:first-of-type {
+    grid-column: 1 / 3;
+  }
+
+  .gallery_item_icecream:nth-of-type(2) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+  }
+
+  .gallery_item_cassette:nth-of-type(3) {
+    grid-row: 2 / 4;
+  }
+
+  .gallery_item_books:nth-of-type(4) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .gallery_item_street:last-of-type {
+    grid-column: 2 / 4;
+  }
+}
+
+@media (width >= 1024px) {
+  .frame::after {
+    top: 1250px;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .header_title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header_text{
+    max-inline-size: 491px;
+    max-block-size: 71px;
+  }
+
+  .what_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .what_block_title {
+    max-inline-size: 315px;
+  }
+
+  .how_title{
+    max-inline-size: 315px;
+  }
 }
