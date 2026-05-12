@@ -3,6 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-image: var(--background-image);
+  background-color: #000028;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -14,7 +15,7 @@
 }
 
 .header {
-  height: 100vh;
+  min-height: 668px;
   padding: 10px;
   display: grid;
   position: relative;
@@ -160,24 +161,20 @@
   border: 1px solid var(--text-color);
 }
 
-.why_block {
+.section {
   display: grid;
   grid-template-columns: 1fr;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.why_block_title {
+.why_block_title { 
   padding-top: 40px;
   padding-bottom: 20px;
 }
 
-.what_block {
+.section_what {
   padding-top: 30px;
-  display: grid;
-  grid-template-columns: 1fr;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .what_block_title {
@@ -185,11 +182,7 @@
   padding-bottom: 20px;
 }
 
-.how_block {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding-left: 10px;
-  padding-right: 10px;
+.section_how {
   padding-top: 20px;
 }
 
@@ -218,6 +211,13 @@
   padding-right: 10px;
   padding-top: 30px;
 }
+
+.gallery_item {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 
 .gallery_title {
   color: var(--sub-text-color);
@@ -274,7 +274,7 @@
     max-inline-size: 364px;
   }
 
-  .why_block {
+  .section {
     grid-template-columns: max-content 1fr;
     padding: 60px 20px 0 20px;
     gap: 20px;
@@ -286,18 +286,18 @@
     max-inline-size: 236px;
   }
 
-  .what_block {
+  .section_what {
+    grid-template-columns: 1fr;
     padding: 60px 20px 0 20px;
+    gap: 0;
   }
 
   .what_block_title {
     max-inline-size: 236px;
   }
 
-  .how_block {
+  .section_how {
     padding: 40px 20px 0 20px;
-    grid-template-columns: max-content 1fr;
-    gap: 20px;
   }
 
   .how_title {
@@ -314,13 +314,6 @@
     gap: 20px;
     grid-template-areas: inherit;
     padding-top: 20px;
-  }
-
-  .gallery_item {
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: cover;
-    object-position: center;
   }
 
   .gallery_item_mountains:first-of-type {
@@ -355,10 +348,6 @@
 }
 
 @media (width >= 1024px) {
-  .frame::before {
-    margin: 19px 19px;
-  }
-
   .header {
     padding: 0;
     padding-left: 20px;
@@ -372,14 +361,8 @@
   }
 
   .header__theme-menu-list {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 0px;
-  }
-
-  .header_title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin-left: -20px;
   }
 
   .header_text {
@@ -387,18 +370,8 @@
     max-block-size: 71px;
   }
 
-  .why_block {
-    grid-template-columns: max-content 1fr;
-    padding: 60px 20px 0px 20px;
-    gap: 20px;
-  }
-
   .why_block_title {
     max-inline-size: 315px;
-  }
-
-  .what_block {
-    padding: 60px 20px 0px 20px;
   }
 
   .what_container {
@@ -411,10 +384,8 @@
     max-inline-size: 315px;
   }
 
-  .how_block {
-    grid-template-columns: max-content 1fr;
+  .section_how {
     padding: 50px 20px 0px 20px;
-    gap: 20px;
   }
 
   .how_title {
@@ -427,18 +398,10 @@
   }
 
   .gallery {
-    padding: 60px 20px 60px 20px;
+    padding-bottom: 60px;
   }
 
   .gallery_container {
-    padding: 20px 0px 0px 0px;
-  }
-
-  .footer {
-    padding: 0;
-  }
-
-  .footer_title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    padding-bottom: 0;
   }
 }
