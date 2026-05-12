@@ -15,7 +15,7 @@
 }
 
 .header {
-  height: 100vh;
+  min-height: 668px;
   padding: 10px;
   display: grid;
   position: relative;
@@ -250,6 +250,7 @@
 
 @media (width >= 768px) {
   .header {
+    min-height: 1024px;
     padding: 20px;
   }
 
@@ -349,6 +350,7 @@
 
 @media (width >= 1024px) {
   .header {
+    min-height: 768px;
     padding: 0;
     padding-left: 20px;
     padding-right: 20px;
