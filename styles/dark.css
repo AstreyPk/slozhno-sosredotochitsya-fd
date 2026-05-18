@@ -18,6 +18,10 @@
   --bg-color: #000028;
 }
 
+.theme-dark .decorate {
+  display: flex;
+}
+
 .theme-dark .header__theme-menu-button:hover {
   border: 1px solid rgba(255, 0, 112, 0.5);
 }
